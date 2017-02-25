@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2C677677-3CEC-43BF-90C5-CC4246894BE5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>EasyPusher_demo</RootNamespace>
+    <ProjectName>EasyPusher_RTSP_CJ</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>./live/BasicUsageEnvironment/include;./live/groupsock/include;./live/liveMedia/include;./live/UsageEnvironment/include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;E:\project\EasyDarwin\WpdPack_4_1_2\WpdPack\Include;</IncludePath>
+    <LibraryPath>./live/BasicUsageEnvironment;./live/groupsock;./live/liveMedia;./live/UsageEnvironment;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;E:\project\EasyDarwin\WpdPack_4_1_2\WpdPack\Lib</LibraryPath>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WPCAP;HAVE_REMOTE;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./libEasyRTSPClient/Include/;./Include/;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1\lib64-msvc-10.0;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;wsock32.lib;winmm.lib;libEasyPusher.lib;libEasyRTSPClient.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>./Lib/;./libEasyRTSPClient/Lib/;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1\lib32-msvc-10.0;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1</AdditionalLibraryDirectories>
+      <AdditionalOptions>Packet.lib wpcap.lib ws2_32.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessorDefinitions>WPCAP;HAVE_REMOTE;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./libEasyRTSPClient/Include/;./Include/;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1\lib64-msvc-10.0;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;wsock32.lib;winmm.lib;libEasyPusher.lib;libEasyRTSPClient.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>./Lib/;./libEasyRTSPClient/Lib/;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1\lib32-msvc-10.0;E:\project\EasyDarwin\boost\boost_1_58_0_b1-bin-msvc-all-32-64\boost_1_58_0_b1</AdditionalLibraryDirectories>
+      <AdditionalOptions>Packet.lib wpcap.lib ws2_32.lib %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="concurrent_queue.h" />
+    <ClInclude Include="EasyPusherAPI.h" />
+    <ClInclude Include="gettime.h" />
+    <ClInclude Include="libEasyRTSPClient\Include\EasyRTSPClientAPI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
